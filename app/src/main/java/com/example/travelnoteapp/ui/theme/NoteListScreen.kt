@@ -1,0 +1,116 @@
+package com.example.travelnoteapp.ui.theme
+
+import android.graphics.drawable.Icon
+import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
+import androidx.compose.material3.Icon
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
+import androidx.compose.material.icons.filled.Add
+import androidx.compose.material.icons.filled.Refresh
+import androidx.compose.runtime.*
+import androidx.compose.material3.IconButton
+import androidx.compose.material3.Card
+import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.FloatingActionButton
+import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Text
+import androidx.compose.material3.TopAppBar
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.dp
+import com.example.travelnoteapp.data.TravelNoteViewModel
+import com.example.travelnoteapp.data.Note
+
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun NoteListScreen(
+    viewModel: TravelNoteViewModel,
+    onEditNote: (Note) -> Unit,
+    onAddNoteRequested: () -> Unit = {}
+) {
+    val notes by viewModel.notes.collectAsState()
+
+    Scaffold(
+        topBar = {
+            TopAppBar(title = { Text("Travel Notes") },
+    )
+},
+
+    ) { padding ->
+        Surface(modifier = Modifier
+            .fillMaxSize()
+            .padding(padding)) {
+
+            if (notes.isEmpty()) {
+                Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
+                    Text("No notes yet. Tap + to add one.", style = MaterialTheme.typography.bodyLarge)
+                }
+            } else {
+                LazyColumn(
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .padding(12.dp),
+                            verticalArrangement = Arrangement.spacedBy(8.dp),
+                            contentPadding = PaddingValues(bottom = 80.dp)
+                        ) {
+                     items(notes, key = { it.id }) { note ->
+                         CardDisplay(
+                             note = note,
+                             onEdit = { onEditNote(note) },
+                             onDelete = { viewModel.deleteNote(note) }
+                         )
+                     }
+                }
+            }
+        }
+
+    }
+}
+
+
+
+
+
+
+
+
+///********************************
+// * NoteListScreen
+// * Displays a list of notes, one
+// * note per card.
+// ********************************/
+//@Composable
+//fun NoteListScreen(viewModel: TravelNoteViewModel) {
+//    val notes by viewModel.notes.collectAsState()
+//
+//    LazyColumn {
+//        items(notes, key = { it.id}) { note ->
+//            CardDisplay(note = note)
+//        }
+//    }
+//}
+///********************************
+// *CardDisplay
+// * UI of the note card that contains
+// * the content of the card
+// ********************************/
+//@Composable
+//fun CardDisplay(
+//    note: TravelNote,
+//    modifier: Modifier = Modifier
+//) {
+//    Card(
+//
+//        modifier = modifier.padding(vertical = 4.dp, horizontal = 8.dp)
+//    ) {
+//        NoteCardContent(note)
+//    }
+//}
