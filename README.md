@@ -33,4 +33,4 @@ I used Kotlin as the language for this app.
 * The first thing to fix is to get the app's opening page to stay on the screen for more than a split second.
 * The second thing I need to do is text the apps functionality to make sure all the components work as expected.
 * Once everything works, I would like to add the ability to upload pictures to save with specific notes.
-* 
+  
