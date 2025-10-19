@@ -23,10 +23,10 @@ I used Kotlin as the language for this app.
 
 
 * [AndroidStudio Working with lists](https://developer.android.com/codelabs/jetpack-compose-state?continue=https%3A%2F%2Fdeveloper.android.com%2Fcourses%2Fpathways%2Fjetpack-compose-for-android-developers-1%23codelab-https%3A%2F%2Fdeveloper.android.com%2Fcodelabs%2Fjetpack-compose-state#9)
-* [JetPack State CodeLab]((https://developer.android.com/codelabs/jetpack-compose-state?continue=https%3A%2F%2Fdeveloper.android.com%2Fcourses%2Fpathways%2Fjetpack-compose-for-android-developers-1%23codelab-https%3A%2F%2Fdeveloper.android.com%2Fcodelabs%2Fjetpack-compose-state#9))
-* [Geeks for Geeks]([(https://www.geeksforgeeks.org/android/android-project-folder-structure/)))
-* [Medium]([[http://url.link.goes.here](https://developer.android.com/develop/ui/compose/state?authuser=1#:~:text=Key%20Point:%20Compose%20automatically%20recomposes,and%20read%20in%20a%20Composable.)](https://medium.com/@fahrizalfms/how-i-use-factory-method-pattern-on-android-development-5d383efc9f3c))
-*
+* [JetPack State CodeLab](https://developer.android.com/codelabs/jetpack-compose-state?continue=https%3A%2F%2Fdeveloper.android.com%2Fcourses%2Fpathways%2Fjetpack-compose-for-android-developers-1%23codelab-https%3A%2F%2Fdeveloper.android.com%2Fcodelabs%2Fjetpack-compose-state#9)
+* [Geeks for Geeks](https://www.geeksforgeeks.org/android/android-project-folder-structure/)
+* [Medium](https://medium.com/@fahrizalfms/how-i-use-factory-method-pattern-on-android-development-5d383efc9f3c)
+
 # Future Work
 
 
